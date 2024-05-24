@@ -1,0 +1,31 @@
+spring:
+  application:
+    name: category-service
+  datasource:
+    url: jdbc:sqlserver://localhost:1433;databaseName=ManhDungEcommerce;encrypt=true;trustServerCertificate=true;
+    username: sa
+    password: 123
+    driverClassName: com.microsoft.sqlserver.jdbc.SQLServerDriver
+  jpa:
+    show-sql: true
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.SQLServer2012Dialect
+    hibernate:
+      ddl-auto: update
+
+    cloud:
+      config:
+        enabled: true
+        uri: http://localhost:9296
+
+    eureka:
+      client:
+        serviceUrl:
+          defaultZone: http://localhost:8761/eureka/
+server:
+  servlet:
+    encoding:
+      charset: UTF-8
+      enabled: true
+  port: 8083

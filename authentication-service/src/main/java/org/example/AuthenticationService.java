@@ -12,4 +12,4 @@ public class AuthenticationService {
     public static void main(String[] args) {
         SpringApplication.run(AuthenticationService.class);
     }
-}
+} 
